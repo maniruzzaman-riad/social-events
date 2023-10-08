@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <div className="grid grid-cols-1 lg:grid-cols-4">
-                <div>
+                <div className="hidden lg:block">
                     <h2>this is left side</h2>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 col-span-1 lg:col-span-3">

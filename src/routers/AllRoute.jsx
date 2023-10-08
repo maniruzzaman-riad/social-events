@@ -5,6 +5,7 @@ import Home from "../service/Home";
 import Register from "../inputData/Register";
 import Login from "../inputData/Login";
 import Details from "../service/Details";
+import PrivetRout from "./PrivetRout";
 
 
 const router=createBrowserRouter([
@@ -20,7 +21,8 @@ const router=createBrowserRouter([
             },
             {
                 path:'/details/:id',
-                element:<Details></Details>
+                element:<PrivetRout><Details></Details></PrivetRout>,
+                loader:()=>fetch('/data.json')
             },
             {
                 path:'/login',
