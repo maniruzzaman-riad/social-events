@@ -1,6 +1,27 @@
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 
 const Register = () => {
+    const {userRegistration}=useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleRegistration=(e)=>{
+        e.preventDefault()
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const email = form.get('email');
+        const password = form.get('password')
+        console.log(name,email,password);
+
+        userRegistration(email,password)
+        .then(
+            navigate('/')
+        )
+        .catch()
+    }
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -10,7 +31,7 @@ const Register = () => {
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onSubmit={handleRegistration} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>

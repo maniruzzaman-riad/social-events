@@ -4,6 +4,7 @@ import ErrorPage from "../shared/ErrorPage";
 import Home from "../service/Home";
 import Register from "../inputData/Register";
 import Login from "../inputData/Login";
+import Details from "../service/Details";
 
 
 const router=createBrowserRouter([
@@ -14,7 +15,12 @@ const router=createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader:()=>fetch('/data.json')
+            },
+            {
+                path:'/details/:id',
+                element:<Details></Details>
             },
             {
                 path:'/login',
