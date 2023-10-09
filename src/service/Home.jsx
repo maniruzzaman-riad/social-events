@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "./Banner";
 import Services from "./Services";
+import Breaking from "../shared/Breaking";
+import ImgGallery from "../shared/ImgGallery";
 
 
 const Home = () => {
@@ -8,7 +10,9 @@ const Home = () => {
     // console.log(data);
     return (
         <div>
+            <Breaking></Breaking>
             <Banner></Banner>
+            
             <div className="grid grid-cols-1 lg:grid-cols-4">
                 <div className="hidden lg:block">
                     <h2>this is left side</h2>
@@ -19,6 +23,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+                <ImgGallery></ImgGallery>
         </div>
     );
 };
