@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
+import { FiLogOut } from 'react-icons/fi';
+import logo from '../assets/logo.png'
 
 
 const Navbar = () => {
 
     const { logOutUser, user } = useContext(AuthContext)
-    // console.log(user);
+    console.log(user);
 
     const handleLogOut = () => {
         logOutUser()
@@ -19,8 +21,8 @@ const Navbar = () => {
         <li><NavLink to="/login">Login</NavLink></li>
         {
             user && <>
-                <li><NavLink to="/register">User Info</NavLink></li>
-                <li><NavLink to="/login">Privecy</NavLink></li>
+                <li><NavLink to="/userInfo">User Info</NavLink></li>
+                <li><NavLink to="/privecy">Privecy</NavLink></li>
             </>
         }
 
@@ -37,7 +39,7 @@ const Navbar = () => {
                             {allLink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <img className="w-32" src={logo} alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -47,11 +49,12 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? <>
-                            <h2>{user.email}</h2>
-                            <button onClick={handleLogOut} className="btn">Log-Out</button>
+                            <img className="w-14 h-14 rounded-full" src={user.photoURL} alt="" />
+                            <h2 className="font-bold mx-3">{user.displayName}</h2>
+                            <button onClick={handleLogOut} className="text-2xl border-2 p-2 rounded-full border-purple-700"><FiLogOut></FiLogOut></button>
                         </>
                             :
-                            <Link to="/login"><button className="btn">Log-in</button></Link>
+                            <Link to="/login"><button className="py-1 px-3 bg-green-600 text-white font-semibold rounded-lg">Log-In</button></Link>
                     }
 
                 </div>

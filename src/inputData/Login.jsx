@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
+import {FcGoogle } from 'react-icons/fc';
 
 
 const Login = () => {
-    const {loginUser}=useContext(AuthContext)
+    const {loginUser,signInWithGoogle}=useContext(AuthContext)
     const navigate =useNavigate()
 
     const handleLogin=(e)=>{
@@ -21,13 +22,19 @@ const Login = () => {
         .catch()
     }
 
+    const handleGoogleLogin =()=>{
+        signInWithGoogle()
+        .then()
+        .catch()
+    }
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <h1 className="text-5xl font-bold">Login now Here!</h1>
+                        
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleLogin} className="card-body">
@@ -50,6 +57,8 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        <button onClick={handleGoogleLogin} className=" flex items-center justify-center gap-3 border-2 w-1/2 mx-auto py-2 font-bold rounded-lg border-purple-600 hover:bg-purple-400"><FcGoogle></FcGoogle> Login with Google</button>
+                        <h2 className="text-center my-5 font-semibold">I have no account <Link to="/register"><span className="py-1 px-3 bg-green-600 rounded-lg text-white font-semibold">Registration</span></Link></h2>
                     </div>
                 </div>
             </div>

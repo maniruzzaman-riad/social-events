@@ -5,6 +5,7 @@ import Breaking from "../shared/Breaking";
 import ImgGallery from "../shared/ImgGallery";
 import sidebarimg from '../assets/sidebar.jpg'
 import FollowUs from "../shared/FollowUs";
+import HappyClients from "../shared/HappyClients";
 
 
 const Home = () => {
@@ -27,7 +28,8 @@ const Home = () => {
                     }
                 </div>
             </div>
-                <ImgGallery></ImgGallery>
+            <HappyClients></HappyClients>
+            <ImgGallery></ImgGallery>
         </div>
     );
 };

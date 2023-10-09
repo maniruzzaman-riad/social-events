@@ -6,17 +6,19 @@ const Footer = () => {
             <footer className="footer p-10 bg-black text-white">
                 <nav>
                     <header className="footer-title">Services</header>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <a className="link link-hover">Weddings</a>
+                    <a className="link link-hover">Birthday Parties</a>
+                    <a className="link link-hover">Anniversaries</a>
+                    <a className="link link-hover">Engagement Parties</a>
+                    <a className="link link-hover">Retirement Parties</a>
+                    <a className="link link-hover">Baby Shower</a>
                 </nav>
                 <nav>
                     <header className="footer-title">Company</header>
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <a className="link link-hover">Privecy</a>
+                    <a className="link link-hover">preview</a>
                 </nav>
                 <nav>
                     <header className="footer-title">Social</header>

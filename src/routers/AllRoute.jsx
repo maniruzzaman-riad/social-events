@@ -6,6 +6,9 @@ import Register from "../inputData/Register";
 import Login from "../inputData/Login";
 import Details from "../service/Details";
 import PrivetRout from "./PrivetRout";
+import Contact from "../shared/Contact";
+import UserInfo from "../shared/UserInfo";
+import Privecy from "../shared/Privecy";
 
 
 const router=createBrowserRouter([
@@ -23,6 +26,18 @@ const router=createBrowserRouter([
                 path:'/details/:id',
                 element:<PrivetRout><Details></Details></PrivetRout>,
                 loader:()=>fetch('/data.json')
+            },
+            {
+                path:'/contact',
+                element:<Contact></Contact>
+            },
+            {
+                path:'/privecy',
+                element:<Privecy></Privecy>
+            },
+            {
+                path:'/userInfo',
+                element:<UserInfo></UserInfo>
             },
             {
                 path:'/login',
