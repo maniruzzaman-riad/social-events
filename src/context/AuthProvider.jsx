@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
 
     const signInWithGoogle =()=>{
         setLoding(true)
-        signInWithPopup(auth,provider)
+        return signInWithPopup(auth,provider)
     }
 
     useEffect(() => {

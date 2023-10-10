@@ -1,31 +1,52 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
+import Swal from 'sweetalert2'
 
 
 const Register = () => {
-    const {userRegistration}=useContext(AuthContext)
+    const { userRegistration } = useContext(AuthContext)
+    const [passwordValid,setPasswordValid]=useState("")
     const navigate = useNavigate()
 
-    const handleRegistration=(e)=>{
+    const handleRegistration = (e) => {
         e.preventDefault()
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
         const email = form.get('email');
         const password = form.get('password')
-        console.log(name,email,password);
+        console.log(name, email, password);
 
-        userRegistration(email,password)
-        .then(user=>{
-            updateProfile(user.user,{
-                displayName:name
+        setPasswordValid('')
+
+        if(password.length < 6){
+            setPasswordValid('Please password add minimum 6 characters')
+            return;
+        }else if(!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/.test(password)){
+            setPasswordValid('Use must one uppercase, one lowercase, one number and one special character')
+            return;
+        }
+        
+
+        userRegistration(email, password)
+            .then(user => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Registration Succesfull',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+                updateProfile(user.user, {
+                    displayName: name
+                })
+                    .then(
+                        navigate('/')
+                    )
+                    .catch()
             })
-            .then()
             .catch()
-            navigate('/')
-        })
-        .catch()
     }
 
     return (
@@ -58,6 +79,9 @@ const Register = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label> */}
                             </div>
+                            {
+                                passwordValid &&  <h2 className="text-center my-5 font-semibold text-red-600">{passwordValid}</h2>
+                            }
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Registration</button>
                             </div>
