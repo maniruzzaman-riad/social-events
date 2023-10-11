@@ -49,8 +49,8 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? <>
-                            <img className="w-14 h-14 rounded-full" src={user.photoURL} alt="" />
-                            <h2 className="font-bold mx-3">{user.displayName}</h2>
+                            <img className="w-14 h-14 rounded-full" src={user?.photoURL} alt="" />
+                            <h2 className="font-bold mx-3">{user?.displayName}</h2>
                             <button onClick={handleLogOut} className="text-2xl border-2 p-2 rounded-full border-purple-700"><FiLogOut></FiLogOut></button>
                         </>
                             :

@@ -31,6 +31,7 @@ const Login = () => {
                 }
                 // console.log(result);
             })
+            // eslint-disable-next-line no-unused-vars
             .catch(error => {
                 // console.log(error.message);
                 Swal.fire({
