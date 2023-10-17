@@ -47,9 +47,12 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         signInWithGoogle()
-            .then(
-                navigate(location?.state ? location.state : '/'),
-            )
+            .then(loginUser=>{
+                if(loginUser){
+                    navigate(location?.state ? location.state : '/')
+                }
+                // console.log(loginUser);
+            })
             .catch()
     }
 

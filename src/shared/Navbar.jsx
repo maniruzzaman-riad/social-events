@@ -8,7 +8,7 @@ import logo from '../assets/logo.png'
 const Navbar = () => {
 
     const { logOutUser, user } = useContext(AuthContext)
-    console.log(user);
+    // console.log(user);
 
     const handleLogOut = () => {
         logOutUser()
@@ -39,7 +39,7 @@ const Navbar = () => {
                             {allLink}
                         </ul>
                     </div>
-                    <img className="w-32" src={logo} alt="" />
+                    <img className="w-20 md:w-32" src={logo} alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -49,7 +49,9 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? <>
-                            <img className="w-14 h-14 rounded-full" src={user?.photoURL} alt="" />
+                            {
+                                user?.photoURL &&  <img className="w-14 h-14 rounded-full" src={user?.photoURL} alt="" />
+                            }
                             <h2 className="font-bold mx-3">{user?.displayName}</h2>
                             <button onClick={handleLogOut} className="text-2xl border-2 p-2 rounded-full border-purple-700"><FiLogOut></FiLogOut></button>
                         </>

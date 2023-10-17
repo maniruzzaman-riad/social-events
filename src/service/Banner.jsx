@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -9,7 +10,7 @@ const Banner = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl font-bold">EventElegancePro</h1>
                         <p className="mb-5">Elevate Your Celebrations with <span className="text-2xl font-bold text-red-600">EventElegancePro.com!</span> We specialize in crafting unforgettable moments for weddings, birthdays, engagements, baby showers, and more. Our dedicated team pays meticulous attention to detail, ensuring your event is a resounding success. Trust us to bring your vision to life and make your special day truly extraordinary.</p>
-                        <button className="btn btn-primary">Contact Us</button>
+                        <Link to='/contact'><button className="btn btn-primary">Contact Us</button></Link>
                     </div>
                 </div>
             </div>

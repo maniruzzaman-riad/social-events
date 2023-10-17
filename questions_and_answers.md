@@ -18,10 +18,9 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: - A: `{}`
-<i>Write your explanation here</i>
+#### Answer:  A
 
-#### explanation: ###### We know that,'let' is cahngeable variable.That's why we can change the value of greeting variable's value.so currect answer is {}.
+#### explanation: We know that,`let` is cahngeable variable.That's why we can change the value of greeting variable's value.so currect answer is {}.
 
 
 </p>
@@ -45,10 +44,9 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: - C: `"12"`
-#### explanation: ###### We can't add a `number` with any `string` in js.In the `sum` function called by two paramiter whice one is a `number` and another is `string`.So we can't add them.that's why ans is `12`.
+#### Answer:  C
+#### explanation: We can't add a `number` with any `string` in js.In the `sum` function called by two paramiter whice one is a `number` and another is `string`.So we can't add them.that's why ans is `12`.
 
-<i>Write your explanation here</i>
 
 </p>
 </details>
@@ -72,11 +70,9 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: - A: `['🍕', '🍫', '🥑', '🍔']`
+#### Answer:  A
 
-<i>Write your explanation here</i>
-
-#### explanation: ###### Here just create an object with `info` name,whice get a value of `favoriteFood` key ,from `food` variable.when we change the value of `favoriteFood` ,it just change from `info ` variable but it can't change anything from `food`.
+#### explanation: Here just create an object with `info` name,whice get a value of `favoriteFood` key ,from `food` variable.when we change the value of `favoriteFood` ,it just change from `info ` variable but it can't change anything from `food`.
 </p>
 </details>
 
@@ -98,11 +94,9 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: - B: `Hi there, undefined`
+#### Answer: B
 
-<i>Write your explanation here</i>
-
-#### explanation: ###### When we create a function,whice will get a parametar.if we call it without any argument,then the function will get `undefine`
+#### explanation: When we create a function,whice will get a parametar.if we call it without any argument,then the function will get `undefine`.so courrect answer is `Hi there, undefined`.
 </p>
 </details>
 
@@ -127,10 +121,8 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: - D: 4
+#### Answer:  D
 
-<i>Write your explanation here</i>
-
-#### explanation: ###### When we use `forEach` in nums,it will get every value as `num` and return it adding `1` with `count`.finaly when num will `3`,at this time count value is `3` and it will return `3+1` .so currect ans is `4`.
+#### explanation: When we use `forEach` in nums,it will get every value as `num` and return it adding `1` with `count`.finaly when num will `3`,at this time count value is `3` and it will return `3+1` .so currect ans is `4`.
 </p>
 </details>
